@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans:    'DM Sans';
+  --font-mono:    'DM Mono';
+  --font-display: 'DM Sans';
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #020617;
+    color: #e5edf7;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: #020617; }
+  ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+
+  ::selection { background: rgba(103, 232, 249, 0.22); }
+
+  h1,h2,h3 { font-family: var(--font-display), system-ui, sans-serif; font-weight: 600; }
+
+  /* Prose styles for written lessons */
+  .prose-lesson h2 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #f8fafc; }
+  .prose-lesson h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.4rem; color: #dbeafe; }
+  .prose-lesson p  { margin: 0 0 0.9rem; color: #cbd5e1; line-height: 1.75; }
+  .prose-lesson ul,.prose-lesson ol { margin: 0 0 0.9rem 1.2rem; color: #cbd5e1; }
+  .prose-lesson li { margin-bottom: 0.3rem; line-height: 1.65; }
+  .prose-lesson strong { color: #f8fafc; font-weight: 600; }
+  .prose-lesson code { font-family: var(--font-mono); font-size: 0.82em; background: #0f172a; padding: 1px 5px; border-radius: 4px; color: #67e8f9; }
+  .prose-lesson pre { background: #0f172a; border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1rem 0; border: 1px solid rgba(255,255,255,0.08); }
+  .prose-lesson pre code { background: none; padding: 0; color: #cbd5e1; font-size: 0.85em; }
+  .prose-lesson blockquote { border-left: 3px solid #67e8f9; margin: 1rem 0; padding-left: 1rem; color: #94a3b8; font-style: italic; }
+}
+
+@layer components {
+  .card {
+    @apply bg-white/[0.04] border border-white/10 rounded-lg;
+  }
+
+  .card-hover {
+    @apply card hover:border-cyan-300/30 hover:shadow-sm transition-all;
+  }
+
+  .btn-primary {
+    @apply bg-cyan-300 hover:bg-cyan-200 active:bg-cyan-400 text-slate-950
+           font-semibold text-sm px-5 py-2.5 rounded-md transition-colors
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply text-slate-300 hover:bg-white/[0.06] text-sm px-3 py-1.5 rounded-md transition-colors;
+  }
+
+  .btn-outline {
+    @apply border border-white/10 hover:border-cyan-300/40 text-slate-200
+           text-sm px-4 py-2 rounded-md transition-colors;
+  }
+
+  .input-field {
+    @apply bg-slate-900 border border-white/10 rounded-md px-4 py-2.5 text-sm
+           text-slate-100 placeholder-slate-600
+           focus:outline-none focus:ring-2 focus:ring-cyan-300/20 focus:border-cyan-300/50
+           transition-all w-full;
+  }
+
+  .label-text {
+    @apply text-xs font-medium text-slate-500 uppercase tracking-wider mb-1.5 block;
+  }
+
+  .badge-video   { @apply bg-rose-400/10 text-rose-100 border border-rose-300/20 text-xs font-medium px-2 py-0.5 rounded-full; }
+  .badge-written { @apply bg-amber-300/10 text-amber-100 border border-amber-300/20 text-xs font-medium px-2 py-0.5 rounded-full; }
+  .badge-quiz    { @apply bg-emerald-400/10 text-emerald-100 border border-emerald-300/20 text-xs font-medium px-2 py-0.5 rounded-full; }
+  .badge-done    { @apply bg-emerald-400/10 text-emerald-100 text-xs font-medium px-2 py-0.5 rounded-full; }
+  .icon-button   { @apply inline-flex h-8 w-8 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-slate-300 hover:border-cyan-300/40 hover:text-cyan-100 transition; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #f0ede8 25%, #e8e4dd 50%, #f0ede8 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: 6px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.35s ease-out forwards; }
