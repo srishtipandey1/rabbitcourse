@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+*.db
+node_modules/
+.next/
+.next-check/
+.vercel/
+frontend/.env.local
+*.log
+uploads/
+.DS_Store
