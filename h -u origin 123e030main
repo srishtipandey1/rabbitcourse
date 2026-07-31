@@ -1,0 +1,12 @@
+[33m123e030[m chore: initialize RabbitCourse project scaffold
+[33md1eb47d[m feat(backend): add autonomous course generation agent
+[33maaefbaf[m feat(backend): add portable course data models
+[33m9bf4277[m feat(api): implement auth generation enrollment and uploads
+[33m56239bf[m style(frontend): establish learning workspace design system
+[33md71568f[m feat(frontend): add shared learning platform components
+[33maa6be3a[m feat(frontend): add landing auth dashboard and builder flows
+[33m3c661b4[m feat(frontend): add course library history and settings pages
+[33m0a0a80e[m feat(frontend): add generation timeline and lesson workspace
+[33m7ea6f40[m feat(frontend): add lesson player support panels
+[33mc227025[m ci: add frontend and backend checks
+[33m36f81e2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m docs: document setup deployment and release workflow
